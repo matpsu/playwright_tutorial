@@ -1,12 +1,14 @@
+package html_elements;
+
 import model.Colors;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.actionbuttons.CheckboxModel;
 import page.actionbuttons.RadiobuttonModel;
+import common.AbstractTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RadioButtonTest extends AbstractTest{
+public class RadioButtonTest extends AbstractTest {
     private static final String URL = "https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html";
     private RadiobuttonModel radiobuttonModel;
 

@@ -1,15 +1,16 @@
-import model.Colors;
+package html_elements;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import page.actionbuttons.RadiobuttonModel;
 import page.datepicker.DatepickerModel;
+import common.AbstractTest;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DatepickerTest extends AbstractTest{
+public class DatepickerTest extends AbstractTest {
     private static final String URL = "https://webdriveruniversity.com/Datepicker/index.html";
     private DatepickerModel datepickerModel;
 

@@ -1,13 +1,16 @@
+package html_elements;
+
 import model.IdeType;
 import model.LanguageType;
 import model.ScriptType;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.actionbuttons.DropdownModel;
+import common.AbstractTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DropdownTest extends AbstractTest{
+public class DropdownTest extends AbstractTest {
     private static final String URL = "https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html";
     private DropdownModel dropdownModel;
 

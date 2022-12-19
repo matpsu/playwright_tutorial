@@ -1,14 +1,17 @@
+package html_elements;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page.autocomplete.AutocompleteModel;
+import common.AbstractTest;
 
 import java.util.List;
 import java.util.Random;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AutocompleteTest extends AbstractTest{
+public class AutocompleteTest extends AbstractTest {
     private static final String URL = "https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html";
     private AutocompleteModel autocompleteModel;
 
