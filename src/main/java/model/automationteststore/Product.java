@@ -1,4 +1,4 @@
-package model;
+package model.automationteststore;
 
 import lombok.Builder;
 import lombok.Data;

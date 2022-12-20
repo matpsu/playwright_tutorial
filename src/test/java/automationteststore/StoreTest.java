@@ -1,18 +1,15 @@
 package automationteststore;
 
 import common.AbstractTest;
-import model.Product;
+import model.automationteststore.Product;
+import model.automationteststore.UserData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import page.automationteststore.CartPage;
-import page.automationteststore.NavigationMenu;
-import page.automationteststore.ProductPage;
-import page.automationteststore.SubcateogryListing;
+import page.automationteststore.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,6 +18,16 @@ public class StoreTest extends AbstractTest {
     private NavigationMenu navigationMenu;
     List<Product> expectedProducts = new ArrayList<>();
     private static final int EXPECTED_VALIDATION_ERRORS = 7;
+    private static final UserData USER_DATA = UserData.builder()
+            .firstName("Dev")
+            .lastName("Null")
+            .email("uefi@bios.rom")
+            .country("Portugal")
+            .postalCode("12345")
+            .state("Beja")
+            .address("i2c 52/8")
+            .city("RAM")
+            .build();
 
     @BeforeMethod
     public void beforeMethodCurrentClass() {
@@ -54,7 +61,17 @@ public class StoreTest extends AbstractTest {
         validateCartItems();
 
         var userFormPage = p3.checkout().continueAsGuest();
-        assertThat(userFormPage.continueWithEmptyData().getNumberOfValidationErrors()).isEqualTo(EXPECTED_VALIDATION_ERRORS);
+        assertThat(userFormPage
+                .continueWithEmptyData()
+                .getNumberOfValidationErrors())
+                .isEqualTo(EXPECTED_VALIDATION_ERRORS);
+
+        CheckoutInformationPage checkoutInformationPage = userFormPage
+                .fillUserData(USER_DATA)
+                .continueWithFilledForm();
+
+        UserData userData = checkoutInformationPage.getShippingData();
+        assertThat(userData).isEqualTo(USER_DATA);
     }
 
     private CartPage addToCart(String category, String sub) throws Exception {

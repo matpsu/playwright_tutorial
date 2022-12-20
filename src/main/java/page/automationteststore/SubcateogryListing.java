@@ -3,7 +3,7 @@ package page.automationteststore;
 import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 import lombok.Getter;
-import model.Product;
+import model.automationteststore.Product;
 import page.AbstractPageModel;
 
 import java.util.ArrayList;
