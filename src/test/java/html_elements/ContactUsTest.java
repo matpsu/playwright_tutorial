@@ -1,11 +1,15 @@
+package html_elements;
+
 import model.ContactUs;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.contactus.ContactUsFormReusltModel;
 import page.contactus.ContactUsModel;
+import common.AbstractTest;
+
 import static org.assertj.core.api.Assertions.*;
 
-public class ContactUsTest extends AbstractTest{
+public class ContactUsTest extends AbstractTest {
     private static final String URL = "https://webdriveruniversity.com/Contact-Us/contactus.html";
     private ContactUsModel contactUsModel;
 

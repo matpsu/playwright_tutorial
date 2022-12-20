@@ -1,3 +1,5 @@
+package common;
+
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
@@ -11,7 +13,7 @@ public abstract class AbstractTest {
     Playwright playwright;
     Browser browser;
     BrowserContext context;
-    Page page;
+    protected Page page;
 
     @BeforeTest
     public void beforeTest() {

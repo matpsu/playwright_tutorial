@@ -1,15 +1,11 @@
+package html_elements;
+
+import common.AbstractTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page.ajax.AjaxModel;
-import page.autocomplete.AutocompleteModel;
 
-import java.util.List;
-import java.util.Random;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
-public class AjaxLoaderTest extends AbstractTest{
+public class AjaxLoaderTest extends AbstractTest {
     private static final String URL = "https://webdriveruniversity.com/Ajax-Loader/index.html";
     private AjaxModel ajaxModel;
 
